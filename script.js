@@ -40,9 +40,9 @@ for (var k = 0; k < saveButtons.length; k++) {
     inputSlots[k].setAttribute("autocomplete", "on");
 }
 
-//Adding event listener to DOM to listen for button click.
+//Adding event listener to DOM to listen for click.
 //The function iterates through the length of inputSlots,
-//AND searches for the specific button clicked class.
+//AND searches for the specific element class that is clicked.
 //The function sets a localStorage item for repeated use.
 //The function sets a sessionStorage variable to true to later check
 //if each and/or any button has been clicked.

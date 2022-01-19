@@ -7,14 +7,11 @@ var timeSlots = document.getElementsByTagName('LABEL');
 var inputSlots = document.getElementsByTagName('INPUT');
 var saveButtons = document.getElementsByTagName('BUTTON');
 
-var saveClicked = false;
-var storedItem = localStorage.getItem("storedItem");
-
 //Checktime function to check for each hour on the calender
 //and change background according to time of day.
 function checkTime() {
-    for (var j = 0; j < timeSlots.length; j++) {
-        var num = parseInt(timeSlots[j].id);
+    for (let j = 0; j < timeSlots.length; j++) {
+        const num = parseInt(timeSlots[j].id);
         if (num < parseInt(moment().format('HH'))) {
             inputSlots[j].classList.remove("future","present");
             inputSlots[j].classList.add("past");
@@ -30,13 +27,13 @@ function checkTime() {
     }
 }
 
-//Runs checktime initially, then sets interval for checktime to run every minute.
+//Runs checktime initially, then sets interval for checktime to run every 30 seconds.
 checkTime();
-setInterval(checkTime, 1000*60);
+setInterval(checkTime, 1000*30);
 
 //For Firefox browsers, to stop saving of input by defaut it is necessary
 //to turn off autocomplete, reset to on for standardization.
-for (var k = 0; k < saveButtons.length; k++) {
+for (let k = 0; k < saveButtons.length; k++) {
     inputSlots[k].setAttribute("autocomplete", "on");
 }
 
@@ -47,7 +44,7 @@ for (var k = 0; k < saveButtons.length; k++) {
 //The function sets a sessionStorage variable to true to later check
 //if each and/or any button has been clicked.
 document.addEventListener("click", function(event) {
-    for(x = 0; x < inputSlots.length; x++) {
+    for(let x = 0; x < inputSlots.length; x++) {
         if (event.target.matches('.saveBtn')){
             localStorage.setItem("storedItem"+x, inputSlots[x].value);
             sessionStorage.setItem("true"+x, true);
@@ -58,7 +55,7 @@ document.addEventListener("click", function(event) {
 //If a button is clicked, then "true"+y value = true.
 //If true, then the input.value is set to storedItem.
 window.onload = function() {
-    for(var y = 0;y < inputSlots.length;y++) {
+    for(let y = 0;y < inputSlots.length;y++) {
         if (sessionStorage.getItem("true"+y)) {
             localStorage.getItem("storedItem"+y);
             inputSlots[y].value = localStorage.getItem("storedItem"+y);

@@ -25,7 +25,10 @@ The following photo shows the application:
 
 ![A user clicks on slots on the color-coded calendar and edits the events.](https://i.imgur.com/MhOmX5g.png)
 
+- - -
+## LINK TO PROJECT
 
+[Day Planner](https://lewisemarcus.github.io/Day-Planner/)
 - - -
 ## Contributors
 - - -

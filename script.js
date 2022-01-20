@@ -5,7 +5,6 @@ timeEl.replaceWith(moment().format('dddd, MMMM Do YYYY'));
 
 var timeSlots = document.getElementsByTagName('LABEL');
 var inputSlots = document.getElementsByTagName('INPUT');
-var saveButtons = document.getElementsByTagName('BUTTON');
 
 //Checktime function to check for each hour on the calender
 //and change background according to time of day.
@@ -33,7 +32,7 @@ setInterval(checkTime, 1000*30);
 
 //For Firefox browsers, to stop saving of input by defaut it is necessary
 //to turn off autocomplete, reset to on for standardization.
-for (let k = 0; k < saveButtons.length; k++) {
+for (let k = 0; k < inputSlots.length; k++) {
     inputSlots[k].setAttribute("autocomplete", "on");
 }
 

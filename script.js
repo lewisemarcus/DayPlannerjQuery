@@ -10,12 +10,11 @@ var inputSlots = document.getElementsByTagName('INPUT');
 //and change background according to time of day.
 function checkTime() {
     for (let j = 0; j < timeSlots.length; j++) {
-        const num = parseInt(timeSlots[j].id);
-        if (num < parseInt(moment().format('HH'))) {
+        if (parseInt(timeSlots[j].id) < parseInt(moment().format('HH'))) {
             inputSlots[j].classList.remove("future","present");
             inputSlots[j].classList.add("past");
         }
-        else if (num == parseInt(moment().format('HH'))) {
+        else if (parseInt(timeSlots[j].id) == parseInt(moment().format('HH'))) {
             inputSlots[j].classList.remove("future","past");
             inputSlots[j].classList.add("present");
         }

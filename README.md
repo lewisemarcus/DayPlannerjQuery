@@ -28,7 +28,7 @@ The following photo shows the application:
 - - -
 ## LINK TO PROJECT
 
-[Day Planner](https://lewisemarcus.github.io/Day-Planner/)
+[Day Planner(jQuery)](https://lewisemarcus.github.io/DayPlannerjQuery//)
 - - -
 ## Contributors
 - - -
